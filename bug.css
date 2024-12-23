@@ -1,0 +1,19 @@
+The following CSS code snippet demonstrates an uncommon error related to specificity and inheritance:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green; /* This rule is less specific than the p selector */
+}
+```
+
+The `div p` selector, while seemingly targeted, is actually overridden by the more specific `p` selector. This is because the `p` selector is more specific due to its element-based nature compared to the combined selector `div p`.
+
+This issue might lead to unexpected results where the intended styling on the paragraph element inside the div is not applied because the specificity of `p{color:red;}` is higher than `div p {color:green;}`.
